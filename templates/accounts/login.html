@@ -1,0 +1,76 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Sign IN {% endblock title %}
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block body_class %} sign-in-illustration {% endblock body_class %}
+
+{% block content %}
+
+<section>
+  <div class="page-header section-height-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column mx-lg-0 mx-auto">
+          <div class="card card-plain">
+            <div class="card-header pb-0 text-left bg-transparent">
+              <h4 class="font-weight-bolder text-primary">Welcome Back</h4>
+              <p class="mb-0 text-secondary">
+                {% if msg %}
+                <div class="alert alert-warning border-0 bg-warning-subtle text-warning">
+                  {{ msg | safe }}
+                </div>
+                {% else %}
+                Please enter your credentials to continue
+                {% endif %}
+              </p>
+            </div>
+            <div class="card-body px-md-5 py-4">
+              <form method="post" role="form">
+                {% csrf_token %}
+                
+                <div class="mb-4">
+                  <label class="form-label text-secondary">Email Address</label>
+                  {{ login_form.email }}
+                </div>
+                <div class="mb-4">
+                  <label class="form-label text-secondary">Password</label>
+                  {{ login_form.password }}
+                </div>
+                <div class="form-check form-switch mb-4">
+                  <input class="form-check-input border shadow-sm" type="checkbox" id="rememberMe">
+                  <label class="form-check-label text-secondary" for="rememberMe">Keep me signed in</label>
+                </div>
+                <div class="text-center">
+                  <button type="submit" name="login" class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-2 mb-0 shadow-lg">
+                    Sign in
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div class="card-footer text-center pt-0 px-lg-2 px-1 bg-transparent">
+              <p class="mb-3 text-sm text-secondary">
+                New to our platform? 
+                <a href="{% url 'register' %}" class="text-primary text-gradient fw-bold">Create an account</a>
+              </p>
+              <p class="mb-4 text-sm text-secondary">
+                Forgot your password?
+                <a class="text-primary text-gradient fw-bold" href="{% url 'emailReset' %}">Reset it here</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
+          <div class="position-relative h-100 m-3 d-flex flex-column justify-content-center">
+            <div class="position-relative">
+              <img class="max-width-500 w-100 position-relative z-index-2 shadow-xl rounded-4" 
+                   src="/static/assets/img/illustrations/chat.jpg">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

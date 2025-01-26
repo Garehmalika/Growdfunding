@@ -1,0 +1,287 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Crowdfunding</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2d3436;
+            --secondary-color: #0984e3;
+            --accent-color: #00cec9;
+            --background-light: #f5f6fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--primary-color);
+            background-color: #ffffff;
+        }
+
+        .team-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .team-member {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .image-container {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 1.5rem;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .team-member img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .team-member:hover img {
+            transform: scale(1.05);
+        }
+
+        .content {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
+
+        .team-member h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin: 1rem 0 0.5rem;
+        }
+
+        .team-member .role {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .team-member .bio {
+            color: #636e72;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 2rem auto 4rem;
+            padding: 3rem;
+            background: var(--background-light);
+            border-radius: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .stats-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .stats-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .stats-card h2 {
+            color: var(--secondary-color);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stats-card p {
+            color: #636e72;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+        }
+
+        .mission-section {
+            background: linear-gradient(135deg, var(--background-light) 0%, #ffffff 100%);
+            padding: 5rem 2rem;
+            border-radius: 20px;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .mission-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .mission-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #636e72;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <h1 class="section-title">About Us</h1>
+        
+        <div class="stats-container">
+            <div class="stats-card">
+                <h2>500+</h2>
+                <p>Successful Projects</p>
+            </div>
+            <div class="stats-card">
+                <h2>$10M+</h2>
+                <p>Funds Raised</p>
+            </div>
+            <div class="stats-card">
+                <h2>50K+</h2>
+                <p>Happy Backers</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Meet Our Team</h2>
+        <div class="team-container">
+            <div class="team-member">
+                <div class="image-container">
+                    <img src="/api/placeholder/300/300?text=GM&background=0984e3&color=ffffff" alt="GAREH MALIKA">
+                </div>
+                <div class="content">
+                    <h3>GAREH MALIKA</h3>
+                    <div class="role">CEO & Founder</div>
+                    <p class="bio">Leading our vision with 15 years of fintech expertise and entrepreneurial success.</p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="image-container">
+                    <img src="/api/placeholder/300/300?text=HM&background=00cec9&color=ffffff" alt="HAMMALE MOURAD">
+                </div>
+                <div class="content">
+                    <h3>HAMMALE MOURAD</h3>
+                    <div class="role">CTO</div>
+                    <p class="bio">Driving innovation in blockchain technology and secure payment systems.</p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="image-container">
+                    <img src="/api/placeholder/300/300?text=FA&background=6c5ce7&color=ffffff" alt="FRIK AYA">
+                </div>
+                <div class="content">
+                    <h3>FRIK AYA</h3>
+                    <div class="role">COO</div>
+                    <p class="bio">Optimizing operations and ensuring excellence in project delivery.</p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="image-container">
+                    <img src="/api/placeholder/300/300?text=FD&background=00b894&color=ffffff" alt="FARCHAKHI DOUAE">
+                </div>
+                <div class="content">
+                    <h3>FARCHAKHI DOUAE</h3>
+                    <div class="role">Project Manager</div>
+                    <p class="bio">Orchestrating project success through strategic planning and execution.</p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="image-container">
+                    <img src="/api/placeholder/300/300?text=HM&background=e17055&color=ffffff" alt="HABBANI MOHAMMED">
+                </div>
+                <div class="content">
+                    <h3>HABBANI MOHAMMED</h3>
+                    <div class="role">Technical Lead</div>
+                    <p class="bio">Spearheading technical excellence and innovative solutions.</p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="image-container">
+                    <img src="/api/placeholder/300/300?text=HA&background=fdcb6e&color=ffffff" alt="HILAL AYOUB">
+                </div>
+                <div class="content">
+                    <h3>HILAL AYOUB</h3>
+                    <div class="role">Product Manager</div>
+                    <p class="bio">Crafting exceptional user experiences and product strategies.</p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="image-container">
+                    <img src="/api/placeholder/300/300?text=HC&background=a29bfe&color=ffffff" alt="HAMMACH CHAIMAE">
+                </div>
+                <div class="content">
+                    <h3>HAMMACH CHAIMAE</h3>
+                    <div class="role">Marketing Director</div>
+                    <p class="bio">Developing impactful marketing strategies for sustainable growth.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mission-section">
+            <div class="mission-content">
+                <h2 class="section-title">Our Mission</h2>
+                <p>
+                    We believe in empowering creators and innovators by connecting them with the resources they need to bring their ideas to life. Our platform makes crowdfunding accessible, transparent, and efficient for everyone.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+{% endblock %}

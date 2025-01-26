@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Crowdfunding</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .contact-icon {
+            font-size: 2rem;
+            color: #5e72e4;
+            margin-bottom: 1rem;
+        }
+        .contact-section {
+            padding: 2rem;
+            border-radius: 10px;
+            background: #f8f9fa;
+            transition: transform 0.3s;
+        }
+        .contact-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .social-links a {
+            margin: 0 10px;
+            font-size: 1.5rem;
+            color: #5e72e4;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: #2d41c9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <h1 class="text-center mb-5">Contact Us</h1>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="contact-section text-center">
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <h3>Email</h3>
+                    <p>support@crowdfunding.com</p>
+                    <p>business@crowdfunding.com</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="contact-section text-center">
+                    <i class="fas fa-phone contact-icon"></i>
+                    <h3>Phone</h3>
+                    <p>+212 (555) 123-4567</p>
+                    <p>+212 (555) 987-6543</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="contact-section text-center">
+                    <i class="fas fa-location-dot contact-icon"></i>
+                    <h3>Address</h3>
+                    <p>123 Crowdfunding Street</p>
+                    <p>Casablanca , bouskoura</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="contact-section text-center">
+                    <h3>Follow Us</h3>
+                    <div class="social-links mt-3">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-8 mx-auto">
+                <div class="contact-section">
+                    <h3 class="text-center mb-4">Send Us a Message</h3>
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email">
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
